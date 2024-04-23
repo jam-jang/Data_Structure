@@ -21,13 +21,10 @@ int main()
             case ']': case '}': case ')':
                 if(stack.isEmpty())
                 {
-                    std::cout << "ERROR" << std::endl;
+                    std::cout << "stack is empty" << std::endl;
                     return -1;
                 }
-                else
-                {
-                    prev = stack.pop();
-                }
+                prev=stack.pop();
 
                 if((ch ==']' && prev !='[') || (ch == '}' && prev!='{')||(ch==')' && prev != '('))
                 {
@@ -37,7 +34,7 @@ int main()
                 break;
 
             default:
-                std::cout << " [], {}, () You must insert! " << std::endl;
+                //pass
                 break;
 
         }

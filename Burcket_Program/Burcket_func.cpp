@@ -1,6 +1,6 @@
 #include "Burcket.h"
 
-ArrayStack::ArrayStack()
+ArrayStack::ArrayStack() : data()
 {
     top = -1;
 }
@@ -14,13 +14,14 @@ void ArrayStack::push(char ch)
 {
     if(isFull())
     {
-        std::cout << "ERROR" << std::endl;
+        std::cout << "stack is full" << std::endl;
     }
-    else
-    {
-        top++;
-        data[top]=ch;
-    }
+    // else
+    // {
+    //     top++;
+    //     data[top]=ch;
+    // }
+    data[++top]=ch;
 }
 
 char ArrayStack::pop()
@@ -30,12 +31,13 @@ char ArrayStack::pop()
         std::cout << "Stack is Empty" << std:: endl;
         return -1;
     }
-    else
-    {
-        char tmp = data[top];
-        top--;
-        return tmp;
-    }
+    // else
+    // {
+    //     char tmp = data[top];
+    //     top--;
+    //     return tmp;
+    // }
+    return data[top--];
 }
 
 bool ArrayStack::isEmpty()
